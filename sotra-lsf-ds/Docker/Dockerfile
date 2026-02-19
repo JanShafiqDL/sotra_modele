@@ -3,14 +3,9 @@ FROM python:3.9.7
 WORKDIR /app
 
 RUN pip config --user set global.progress_bar off
-RUN pip install Cython
-RUN pip install flask
-RUN pip install flask-cors
-RUN pip install ctranslate2
-RUN pip install sacremoses
-RUN pip install sentence_splitter
-RUN pip install youtokentome
-
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+RUN pip install youtokentome==1.0.6
 
 COPY sentence_splitter/non_breaking_prefixes /app/sentence_splitter/non_breaking_prefixes
 
