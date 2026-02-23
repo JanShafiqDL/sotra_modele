@@ -81,5 +81,7 @@ jobs:
           ls
           pwd
           ls -l sotra-lsf-ds
-          oras push ghcr.io/sotra-models:${{ github.sha }} 'sotra-lsf-ds/Docker/models1/*'
+          cd sotra-lsf-ds/Docker
+          ls
+          oras push ghcr.io/sotra-models:${{ github.sha }} 'models1/*'
         
