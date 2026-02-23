@@ -77,5 +77,5 @@ jobs:
       - name: Setup oras
         uses: oras-project/setup-oras@v1
       - name: Package model
-        run: oras push ghcr.io/sotra-models:${{ github.sha }} './sotra-lsf-ds/Docker/models1/*'
+        run: oras push ghcr.io/sotra-models:${{ github.sha }} 'sotra-lsf-ds/Docker/models1/*'
         
