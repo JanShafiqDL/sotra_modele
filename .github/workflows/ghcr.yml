@@ -74,3 +74,9 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
           labels: ${{ steps.docker_meta_public.outputs.labels }}
           tags: ${{ steps.docker_meta_public.outputs.tags }}
+      - name: Setup oras
+        uses: oras-project/setup-oras@v1
+      - name: Package model
+        run: |
+          oras push ghcr.io/sotra-models:${{ github.sha }} ./sotra-lsf-ds/Docker/models1/*
+        
