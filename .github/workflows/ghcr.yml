@@ -78,5 +78,5 @@ jobs:
         uses: oras-project/setup-oras@v1
       - name: Package model
         run: |
-          oras push ghcr.io/${{ github.repository }}:models-${{ github.sha }} './models1/'
+          oras push ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}/models:${{ github.sha }} './models1/'
         
